@@ -1,0 +1,3 @@
+The procedure adds the absolute value of b to a. It does this by subtraction
+when b is non-positive (thus effectively adding its absolute value), or by
+addition otherwise. Clever operator selection.

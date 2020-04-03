@@ -1,0 +1,7 @@
+Applicative-order: the interpreter will evaluate 0, then evaluate procedure p,
+then recursion will cause infinite evaluation of procedure p.
+
+Normal-order: if we "fully expand then reduce," the interpreter will expand
+the test procedure, then infinitely expand the p procedure. However, under the
+exercise assumption that the conditional predicate will be evaluated first, we
+would return the consequent value 0, and never evaluate the alternative p.
