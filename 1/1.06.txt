@@ -1,0 +1,7 @@
+An applicative-order interpreter would not know Alyssa's new-if is a
+conditional, so it would evaluate all the parameters instead of just the
+predicate, which would cause infinite recursion of sqrt-iter.
+
+A normal-order interpreter should work fine. It would first replace the new-if
+procedure with a cond version that it recognizes as a conditional, allowing it
+to evaluate the recursive sqrt-iter expression only when necessary.
