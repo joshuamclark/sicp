@@ -53,18 +53,18 @@
 (A 1 16)
 65536
 ; Well it's not 2^(y^x). Not sure what this is.
-; 
+;
 ; Maybe ((2^y)^y)^y, done x times.
 ; - 2^10 = 1024
 ; - (2^4)^4 = 2^16 = 65536
 ; - No: ((2^3)^3)^3 = 2^27
-; 
+;
 ; Ok, this is Knuth's up-arrow notation: 2 ↑^x y.
 ; - 2 ↑ 10 = 2^10 = 1024
 ; - 2 ↑↑ 4 = 2 ↑ 2 ↑ 2 ↑ 2 = 2^2^2^2 = 2^2^4 = 2^16 = 65536
 ; - 2 ↑↑↑ 3 = 2 ↑↑ 2 ↑↑ 2 = 2 ↑↑ (2 ↑ 2) = 2 ↑↑ 4 = 65536
-; 
-; See: https://en.wikipedia.org/wiki/Knuth%27s_up-arrow_notation 
+;
+; See: https://en.wikipedia.org/wiki/Knuth%27s_up-arrow_notation
 
 ; Procedure definitions:
 ; - f(n) = 2n (iterated addition, i.e. multiplication)

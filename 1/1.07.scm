@@ -18,7 +18,7 @@
     ; Otherwise, accept a guess once the difference between successive guesses
     ; is small relative to the guesses.
     (< (/ (abs (- guess old-guess))
-	  guess)
+          guess)
        0.001)))
 
 (define (sqrt-iter old-guess guess x)

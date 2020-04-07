@@ -4,9 +4,9 @@
   (if (> x y)
       ; x is large, so y or z?
       (if (> y z)
-	  (sum-of-squares x y)
-	  (sum-of-squares x z))
+          (sum-of-squares x y)
+          (sum-of-squares x z))
       ; y is large, so x or z?
       (if (> x z)
-	  (sum-of-squares y x)
-	  (sum-of-squares y z))))
+          (sum-of-squares y x)
+          (sum-of-squares y z))))
