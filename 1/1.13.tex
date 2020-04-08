@@ -1,0 +1,61 @@
+\documentclass{amsart}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+% \usepackage{amssymb}
+
+\begin{document}
+  \begin{thm}
+    $Fib(n)$ is the closest integer to $\phi^n/\sqrt{5}$, where $\phi=(1+\sqrt{5}/2)$.
+  \end{thm}
+  \begin{proof}
+    Let $\psi=(1-\sqrt{5})/2$. Then two Lemmas follow:
+
+    \begin{lem}
+      $\phi^2=(1+\sqrt{5})^2/4=(6+2\sqrt{5})/4=(3+\sqrt{5})/2=1+(1+\sqrt{5})/2=\phi+1$
+    \end{lem}
+
+    \begin{lem}
+      $\psi^2=(1-\sqrt{5})^2/4=(6-2\sqrt{5})/4=(3-\sqrt{5})/2=1+(1-\sqrt{5})/2=\psi+1$
+    \end{lem}
+
+    Now we'll prove a third lemma by induction:
+
+    \begin{lem}
+      $Fib(n)=(\phi^n-\psi^n)/\sqrt{5}$ for all nonnegative integers $n$.
+    \end{lem}
+
+    \begin{proof}
+      First, $(\phi^0-\psi^0)/\sqrt{5}=(1-1)/\sqrt{5}=0=Fib(0)$.
+
+      Second, $(\phi^1-\psi^1)/\sqrt{5}=((1+\sqrt{5}-1+\sqrt{5})/2)/\sqrt{5}=1=Fib(1)$.
+
+      Now assume $Fib(a)=(\phi^a-\psi^a)/\sqrt{5}$ and $Fib(a+1)=(\phi^{a+1}-\psi^{a+1})/\sqrt{5}$
+      for some nonnegative integer $a$.
+
+      Then using Lemmas 1-2:
+      \begin{align*}
+        Fib(a+2)&=Fib(a)+Fib(a+1)\\
+                &=(\phi^a-\psi^a+\phi^{a+1}-\psi^{a+1})/\sqrt{5}\\
+                &=(\phi^a(\phi+1)-\psi^a(\psi+1))/\sqrt{5}\\
+                &=(\phi^a(\phi^2)-\psi^a(\psi^2))/\sqrt{5}\\
+                &=(\phi^{a+2}-\psi^{a+2})/\sqrt{5}
+      \end{align*}
+
+      Thus by induction, $Fib(n)=(\phi^n-\psi^n)/\sqrt{5}$ for all nonnegative integers $n$.
+    \end{proof}
+
+    Rearranging Lemma 3, $\phi^n/\sqrt{5}=Fib(n)+\psi^n/\sqrt{5}$. So we need to show
+    $0.5<\psi^n/\sqrt{5}<0.5$ for all nonnegative integers $n$ to finish the proof.
+
+    Now $\psi=(1-\sqrt{5})/2\approx-0.618$.
+
+    Since $-1<\psi<1$, then $-1<\psi^n\le1$, and 
+    $-\frac{1}{\sqrt{5}}<\frac{\psi^n}{\sqrt{5}}\le\frac{1}{\sqrt{5}}$
+
+    That is, $-0.447<\frac{\psi^n}{\sqrt{5}}\le0.447$, so
+    $-0.5<\frac{\psi^n}{\sqrt{5}}<0.5$. With Lemma 3, this shows that there is less than
+    a $0.5$ difference between $Fib(n)$ and $\phi^n/\sqrt{5}$, which means $Fib(n)$ is the
+    closest integer to $\phi^n/\sqrt{5}$.
+  \end{proof}
+\end{document}
