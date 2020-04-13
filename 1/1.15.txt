@@ -1,0 +1,11 @@
+a. 5 times:
+
+p sine 4.05
+  p sine 1.35
+    p sine 0.45
+      p sine 0.15
+        p sine 0.05
+
+b. Number of iterations: ceil(log_3(abs(a)/0.1))
+
+Space and step growth are proportional to this, so they're O(log a).
